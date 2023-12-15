@@ -1,13 +1,9 @@
-Welcome to Lumache's documentation!
-===================================
+Welcome to xspicker's documentation!
+=============================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**xspicker** 是一套多语言验证环境，包括工具、库、验证框架等.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+点击 :doc:`00_usage` 章节了解如何使用快速 **xspicker**.
 
 .. note::
 
@@ -18,5 +14,9 @@ Contents
 
 .. toctree::
 
-   usage
-   api
+   00_usage
+   01_cases
+   02_ovip
+   03_mlvp
+   08_examples
+   09_api
