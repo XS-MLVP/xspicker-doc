@@ -104,7 +104,9 @@
 测试picker基本功能
 ---------------------
 
-picker的基本功能是将RTL设计文件转换为C++/python/java等其他语言接口，以便于进行单元测试，下面以一个简单的例子来说明如何使用xspicker
+picker的基本功能是将RTL设计文件转换为C++/python/java等其他语言接口，以便于进行单元测试，下面以一个简单的例子来说明如何使用xspicker，并验证Picker工作正常。
+
+请注意，以下测试均仅为验证Picker项目可以正常工作，如果需要获取更详细的示范，请参考第二章。
 
 从测试RTL到UT库生成
 -------------------
@@ -121,7 +123,7 @@ picker的基本功能是将RTL设计文件转换为C++/python/java等其他语�
 
 生成 cpp 工程，需要使用 ``-l cpp`` 参数。生成项目时，会先由仿真器生成基础DPI库，然后再基于cpp的UT封装基类完成初始化代码，并最终编译为UT动态库。调用该UT动态库的API即可实例化一个新的DUT。
 
-使用 -e 生成基于CMake的示范项目，使用 -v 保留所有中间文件
+命令解释：使用 -e 生成基于CMake的示范项目，使用 -v 保留所有中间文件
 
 .. code-block:: console
 
@@ -131,7 +133,7 @@ picker的基本功能是将RTL设计文件转换为C++/python/java等其他语�
 
 .. code-block:: console
 
-   # 执行命令
+   # 在mcv仓库根目录执行命令
    ./example/Cache/release-verilator.sh -l cpp -e 
 
    mcv_out/UT_Cache
@@ -158,8 +160,8 @@ picker的基本功能是将RTL设计文件转换为C++/python/java等其他语�
 
 .. code-block:: console
 
-   # 执行命令
-   ./example/Cache/release-verilator.sh -l cpp -
+   # 在mcv仓库根目录执行命令
+   ./example/Cache/release-verilator.sh -l cpp
 
    mcv_out/UT_Cache
    |-- UT_Cache.hpp
@@ -187,6 +189,9 @@ picker的基本功能是将RTL设计文件转换为C++/python/java等其他语�
 
 .. code-block:: console
    
+   # 在mcv仓库根目录执行命令
+   ./example/Cache/release-verilator.sh -l python -e
+
    tree mcv_out/UT_Cache 
    mcv_out/UT_Cache
    |-- _UT_Cache.so # 生成的python-UT兼容层动态库，python通过该动态库调用与cpp一致的UT封装动态库
